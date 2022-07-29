@@ -6,4 +6,10 @@ export const Headerc = styled.div `
         background-color: red;
         padding: 2%;
     }
+    .Textfield{
+        background-color: white;
+    }
+    .Box{
+        border-radius: 20px;
+    }
 `

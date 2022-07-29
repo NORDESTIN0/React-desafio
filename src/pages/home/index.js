@@ -1,26 +1,34 @@
-import {Container} from "./styled"
+import React from "react";
+//import StarIcon from '@mui/icons-material/Star';
+//import StarHalfIcon from '@mui/icons-material/StarHalf';
+//import StarBorderIcon from '@mui/icons-material/StarBorder';
+import {Movie, Movielist} from "./styled"
+import { useState, useEffect } from "react";
+import { ResetTvOutlined } from "@mui/icons-material";
 
-function Home () {
-    return(
-    <Container>
-    <ul>
-        <li>
-            <a href="#">
-            <img src="https://uauposters.com.br/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/0/201906131220-uau-posters-filmes-john-wick-de-volta-ao-jogo-keanu-reeves.jpg"></img></a>
-            <span>JOHN WICK</span>
-        </li>
-        <li>
-            <a href="#">
-            <img src="https://upload.wikimedia.org/wikipedia/pt/7/72/John_Wick_Chapter_2.png"></img></a>
-            <span>JOHN WICK 2</span>
-        </li>
-        <li>
-            <a href="#">
-            <img src="https://upload.wikimedia.org/wikipedia/pt/e/e0/John_Wick_3_Parabellum.png"></img></a>
-            <span>JOHN WICK 3</span>
-        </li>
-    </ul>
-    </Container>
+function Home() {
+
+const [movies, setMovies] = useState([])
+
+useEffect(() => {
+    fetch(`https://api.themoviedb.org/3/movie/popular?api_key=e8fa4eae0c5122fbf1082350028a12f7&language=en-US&page=1`)
+    .then (response => response.json())
+    .then (data => setMovies(data.results))
+},[])
+
+
+
+return(
+    <Movielist>
+        {movies.map(movie => {
+            return(
+                <Movie key= {movie.id}>
+                    <a href="#"><img src={movie.image_url}></img></a>
+                    <span>{movie.title}</span>
+                </Movie>
+            )
+        })};
+    </Movielist>
     )
 }
 export default Home;
