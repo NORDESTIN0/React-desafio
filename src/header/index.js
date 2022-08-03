@@ -7,7 +7,7 @@ import {Headerc} from "./styled"
 function Header () {
     return(
     <Headerc>
-        <h1>Filmes Online Netflix
+        <h1>Filmes Onlines
     <Box className="Box"
       component="form"
       sx={{
