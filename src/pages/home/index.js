@@ -11,9 +11,7 @@ const image_path = 'https://image.tmdb.org/t/p/w500'
 useEffect(() => {
     fetch(`https://api.themoviedb.org/3/movie/popular?api_key=e8fa4eae0c5122fbf1082350028a12f7&language=en-US&page=1`)
     .then (response => response.json())
-    .then (data => {
-        console.log(data.results)
-        setMovies(data.results)})
+    .then (data => { setMovies(data.results)})
 },[])
 
 return(
