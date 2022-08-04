@@ -2,6 +2,7 @@ import React from "react";
 import {Movie, Movielist} from "./styled"
 import { useState, useEffect } from "react";
 import APIkey from "../../config/APIKEY"
+import { Link } from "react-router-dom";
 
 //import { ResetTvOutlined } from "@mui/icons-material";
 
@@ -21,7 +22,7 @@ return(
         {movies.map(movie => {
             return(
                 <Movie key= {movie.id}>
-                <a href="#"><img src={`${image_path}${movie.poster_path}` }></img></a>
+                <Link to={`/details/${movie.id}`}><img src={`${image_path}${movie.poster_path}` }></img></Link>
                 <span>{movie.title}</span>
                 </Movie>
             )
