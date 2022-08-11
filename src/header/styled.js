@@ -1,15 +1,25 @@
 import styled from "styled-components";
 
 export const Headerc = styled.div `
-    h1{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+
+    .H1{
+        padding: 15px;
+    }
+    .Jsonn{
         text-align: center;
-        background-color: red;
-        padding: 2%;
+        align-items: center;
     }
-    .Textfield{
-        background-color: white;
+    .txt{
+       background-color : white ;
+       border-radius: 10px;
     }
-    .Box{
-        border-radius: 20px;
+    .BTN{
+        margin: 15px;
     }
 `

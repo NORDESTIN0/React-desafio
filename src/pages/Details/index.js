@@ -12,7 +12,7 @@ function Details () {
     const [movies, setMovies] = useState([])
 
     useEffect(() => {
-        fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${APIkey}&language=en-US&page=1`)
+        fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${APIkey}&language=pt-PT&page=1`)
         .then (response => response.json())
         .then (data => { 
 
@@ -38,7 +38,7 @@ function Details () {
                     <span>Sinopse: {movies.sinopse}</span>
                     <span className="release-date">Data de lançamento: {movies.releaseDate}</span>
                     <Stack className="Stck" spacing={2} direction="row">
-                        <Link className="Linkto" to="/"><Button className="ButtomBTN" variant="contained" color="error">Retornar</Button></Link>
+                        <Button variant="contained"><Link className="Linkto" to="/">Retornar</Link></Button>
                     </Stack>
                 </div>
             </div>

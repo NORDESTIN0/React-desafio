@@ -8,7 +8,9 @@ export const Movielist = styled.ul`
         column-gap: 3rem;
         row-gap: 4rem;
         padding-top: 2rem;
-
+`
+export const Container = styled.div`
+    max-width: 89%;
 `
 
 export const Movie = styled.li`

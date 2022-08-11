@@ -42,7 +42,6 @@ export const Container = styled.div`
     
     .Linkto{
         text-decoration: none;
-    }
-
- 
+        color: white;
+    } 
 `
