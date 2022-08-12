@@ -1,15 +1,10 @@
 import styled from "styled-components";
 
 export const Headerc = styled.div `
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: red;
-
-    .H1{
-        padding: 15px;
+ text-align: center;
+    .Linkto{
+        color: white;
+        padding-bottom: 1rem;
     }
     .Jsonn{
         text-align: center;
@@ -18,8 +13,10 @@ export const Headerc = styled.div `
     .txt{
        background-color : white ;
        border-radius: 10px;
+       display: flex;
     }
     .BTN{
         margin: 15px;
+        text-align: center;
     }
 `

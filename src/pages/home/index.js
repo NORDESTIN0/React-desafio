@@ -24,7 +24,7 @@ return(
             return(
                 <Container>
                 <Movie key= {movie.id}>
-                <Link to={`/details/${movie.id}`}><img src={`${image_path}${movie.poster_path}` }></img></Link>
+                <Link to={`/details/${movie.id}`}><img src={`${image_path}${movie.poster_path}` } alt=""/></Link>
                 <span>{movie.title}</span>
                 </Movie>
                 </Container>
