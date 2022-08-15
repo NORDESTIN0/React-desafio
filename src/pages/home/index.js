@@ -1,8 +1,9 @@
 import React from "react";
-import {Movie, Movielist, Container} from "./styled"
+import {Movie, Movielist,} from "./styled"
 import { useState, useEffect } from "react";
 import APIkey from "../../config/APIKEY"
 import { Link } from "react-router-dom";
+import { Container } from "@mui/material";
 
 //import { ResetTvOutlined } from "@mui/icons-material";
 
