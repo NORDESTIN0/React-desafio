@@ -2,7 +2,6 @@ import IMG from "./img";
 import APIkey from "../../config/APIKEY";
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { Container } from "./styled";
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 
@@ -16,33 +15,33 @@ function Details () {
         .then (response => response.json())
         .then (data => { 
 
-            const {title, poster_path, overview, release_date} = data
+            const {title, poster_path, overview, release_date, vote_average} = data
 
             const movies = {
                 id,
                 title,
                 sinopse: overview,
                 image: `${IMG}${poster_path}`,
-                releaseDate: release_date
+                releaseDate: release_date,
+                votos: vote_average,
             }
             setMovies(movies)
         })
     },[id])
 
     return (
-        <Container>
-            <div className="movie">
-                <img src={movies.image} alt={movies.sinopse}></img>
-                <div className="details">
+            <div className="movie-card">
+                <img className="Img-movie" src={movies.image} alt={movies.sinopse}></img>
+                <div className="details-movie">
                     <h1>{movies.title}</h1>
                     <span>Sinopse: {movies.sinopse}</span>
+                    <span>Critica: {movies.votos}</span>
                     <span className="release-date">Data de lançamento: {movies.releaseDate}</span>
                     <Stack className="Stck" spacing={2} direction="row">
-                        <Button variant="contained"><Link className="Linkto" to="/">Retornar</Link></Button>
+                        <Button variant="contained"><Link className="Linkto" to="/" style={{ textDecoration: 'none', color: "white"}}>Retornar</Link></Button>
                     </Stack>
                 </div>
-            </div>
-        </Container>  
+        </div>
     )
 };
 
