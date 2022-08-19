@@ -1,9 +1,10 @@
 import IMG from "./img";
 import APIkey from "../../config/APIKEY";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
+import StarIcon from '@mui/icons-material/Star';
 
 function Details () {
     const {id} = useParams ()
@@ -27,7 +28,8 @@ function Details () {
             }
             setMovies(movies)
         })
-    },[id])
+    },[id]);
+
 
     return (
             <div className="movie-card">
@@ -35,13 +37,13 @@ function Details () {
                 <div className="details-movie">
                     <h1>{movies.title}</h1>
                     <span>Sinopse: {movies.sinopse}</span>
-                    <span>Critica: {movies.votos}</span>
-                    <span className="release-date">Data de lançamento: {movies.releaseDate}</span>
+                    <span>Critica: {movies.votos} <StarIcon/></span>
+                    <span className="release-date">Data de lançamento:{movies.releaseDate}</span>
                     <Stack className="Stck" spacing={2} direction="row">
-                        <Button variant="contained"><Link className="Linkto" to="/" style={{ textDecoration: 'none', color: "white"}}>Retornar</Link></Button>
+                    <Link className="Linkto" to="/" style={{ textDecoration: 'none', color: "white"}}><Button variant="contained">Retornar</Button></Link>
                     </Stack>
                 </div>
-        </div>
+            </div>
     )
 };
 
